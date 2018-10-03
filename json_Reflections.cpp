@@ -55,14 +55,14 @@ private:
 class Proba : public JsonReflect
 {
 	
-	DECLARE_JSON_VALUE(int,			var1,		0);
+	DECLARE_JSON_VALUE(int,		var1,		0);
 	DECLARE_JSON_VALUE(const char*, VAR2,		"doof");
-	DECLARE_JSON_VALUE(double,		variable88, .4);
-	DECLARE_JSON_VALUE(bool,		var,		true);
+	DECLARE_JSON_VALUE(double,	variable88, 	.4);
+	DECLARE_JSON_VALUE(bool,	var,		true);
 	DECLARE_JSON_VALUE(std::string, vars,		"hello");
 	
 	json j2;
-	DECLARE_JSON_VALUE(json,		varj,		j2);
+	DECLARE_JSON_VALUE(json, varj, j2);
 	DECLARE_JSON_ARRAY(int, ia, 8, 14);
 	DECLARE_JSON_ARRAY(std::string, sa, 3, "empty");
 };
@@ -72,16 +72,16 @@ int main()
 	Proba proba;
 	proba.writeJson();
 	
-	proba.var()			= 8;
+	proba.var()		= 8;
 	proba.VAR2()		= "no doof";
 	proba.variable88()	= 1.4;
-	proba.var()			= false;
+	proba.var()		= false;
 	proba.vars()		= "bye";
 	proba.varj()["int"]	= 4;
-	proba.varj()["bool"] = true;
+	proba.varj()["bool"] 	= true;
 
-	proba.ia()[0] = 1;
-	proba.ia()[4] = 2;
+	proba.ia()[0] 		= 1;
+	proba.ia()[4] 		= 2;
 
 	std::cout << std::endl;
 	proba.writeJson();
